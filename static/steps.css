@@ -1,0 +1,212 @@
+.steps {
+    padding-left: 80px;
+    list-style: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 30px auto;
+    border-radius: 3px;
+}
+
+.steps strong {
+    font-size: 15px;
+    display: block;
+    line-height: 1.3;
+}
+
+.steps>li {
+    position: relative;
+    display: block;
+    padding: 12px 50px 8px 50px;
+    width: 140px;
+    height: 60px;
+}
+
+@media (min-width: 768px) {
+    .steps>li {
+        float: left;
+    }
+    .steps .past {
+        color: #666;
+        background: lightgreen;
+    }
+    .steps .present {
+        color: black;
+        background: lightblue
+    }
+    .steps .future {
+        color: white;
+        background: lightslategrey;
+    }
+    .steps .critical {
+        color: black;
+        background: red;
+    }
+    .steps .atrisk {
+        color: black;
+        background: yellow;
+    }
+    .steps li>span:after,
+    .steps li>span:before {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: solid transparent;
+        border-left-color: #f0f0f0;
+        border-width: 40px;
+    }
+    .steps li>span:after {
+        top: -5px;
+        z-index: 1;
+        border-left-color: white;
+        border-width: 44px;
+    }
+    .steps li>span:before {
+        z-index: 2;
+    }
+    .steps li.past+li>span:before {
+        border-left-color: lightgreen;
+    }
+    .steps li.present+li>span:before {
+        border-left-color: lightblue;
+    }
+    .steps li.future+li>span:before {
+        border-left-color: lightslategray;
+    }
+    .steps li.critical>span:before {
+        border-left-color: red;
+    }
+    .steps li.atrisk>span:before {
+        border-left-color: yellow;
+    }
+    .steps li:first-child>span:after,
+    .steps li:first-child>span:before {
+        display: none;
+    }
+    /* Arrows at start and end */
+    .steps li:first-child i,
+    .steps li:last-child i {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .steps li:last-child i {
+        left: auto;
+        right: -30px;
+        border-left-color: transparent;
+        border-top-color: white;
+        border-bottom-color: white;
+    }
+}
+
+
+/* Start of Column CSS */
+
+#container2 {
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+#container1 {
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 50%;
+}
+
+#col1 {
+    float: left;
+    width: 50%;
+    position: relative;
+    left: 10%;
+    overflow: hidden;
+}
+
+#col-center {
+    float: right;
+    width: 50%;
+    position: relative;
+    right: 25%;
+    overflow: hidden;
+}
+
+/* .squaredOne */
+
+.squaredOne {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    margin: 20px auto;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    label {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        cursor: pointer;
+        background: linear-gradient(top, #222 0%, #45484d 100%);
+        box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 1);
+        &:after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            background: $activeColor;
+            background: linear-gradient(top, $activeColor 0%, $darkenColor 100%);
+            box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+        }
+        &:hover::after {
+            opacity: 0.3;
+        }
+    }
+    input[type=checkbox] {
+        visibility: hidden;
+        &:checked+label:after {
+            opacity: 1;
+        }
+    }
+}
+
+
+/* end .squaredOne */
+
+#col2 {
+    float: left;
+    width: 46%;
+    position: relative;
+    left: 56%;
+    overflow: hidden;
+}
+
+#footer {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+#footer p {
+    margin-left: 2%;
+    padding-right: 2%;
+    line-height: 0.9;
+    letter-spacing: 2px;
+}
+
+#footer strong {
+    font-size: 15px;
+    letter-spacing: 2px;
+    display: block;
+    line-height: 1.1;
+}
